@@ -26,13 +26,14 @@ export function ContactForm() {
       <div className="contact-shell">
         <article className="contact-intro">
           <span className="label">Devis</span>
-          <h3>Formulaire visiteur</h3>
-          <p>Nom, telephone, ville, produit souhaite et message.</p>
+          <h3>Yo Pap's</h3>
+          <p>Si tu es arrivé la dans ta lecture, laisse un message dans le formulaire en-bas.</p>
           <div className="notify-card">
             <span className="notify-dot" aria-hidden="true" />
             <div>
               <strong>ntfy</strong>
-              <p>Le formulaire envoie une notification sur ton topic.</p>
+              <p>Je recevrai ta notif.</p>
+              <p>Les textes ne sont pas tous bons, on modifiera encore beaucoup de choses.</p>
             </div>
           </div>
         </article>
