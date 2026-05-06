@@ -26,14 +26,14 @@ export function ContactForm() {
       <div className="contact-shell">
         <article className="contact-intro">
           <span className="label">Devis</span>
-          <h3>Yo Pap's</h3>
-          <p>Si tu es arrivé la dans ta lecture, laisse un message dans le formulaire en-bas.</p>
+          <h3>Envoie ton message!</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum voluptates quas? Amet a doloribus aut quisquam ex architecto quibusdam iste velit vitae placeat laudantium error provident, quas cum iure.</p>
           <div className="notify-card">
             <span className="notify-dot" aria-hidden="true" />
             <div>
               <strong>ntfy</strong>
               <p>Je recevrai ta notif.</p>
-              <p>Les textes ne sont pas tous bons, on modifiera encore beaucoup de choses.</p>
+              <p></p>
             </div>
           </div>
         </article>
