@@ -5,9 +5,9 @@ import { ContactForm } from "../src/contactForm";
 import { services } from "../data/services";
 
 const stats = [
-  { label: "Toiles", value: "Screen / Blackout" },
-  { label: "Commandes", value: "Chainette / RTS / WT" },
-  { label: "Pose", value: "Sur mesure" }
+  { label: "Toiles", value: "Screen ou occultant" },
+  { label: "Commandes", value: "Manuelle ou motorisee" },
+  { label: "Pose", value: "Adaptee a chaque fenetre" }
 ];
 
 const serviceNames = Object.keys(services);
@@ -46,10 +46,11 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <span className="eyebrow">Stores et moustiquaires sur mesure</span>
-          <h1>Solutions propres. Commandes simples. Pose nette.</h1>
+          <h1>Des stores plus doux pour chaque interieur.</h1>
           <p>
-            Enrouleurs, jour et nuit, tringles techniques et moustiquaires pour
-            l&apos;interieur et l&apos;exterieur.
+            Enrouleurs, stores jour et nuit, tringles techniques et moustiquaires
+            prepares sur mesure pour controler la lumiere, l&apos;intimite et le
+            confort sans alourdir la piece.
           </p>
           <div className="hero-actions">
             <a className="button-primary" href="#contact">Demander un devis</a>
@@ -58,7 +59,12 @@ export default function Home() {
         </div>
 
         <aside className="hero-panel">
-          <span className="panel-label">Configurations</span>
+          <div className="window-preview" aria-hidden="true">
+            <span className="preview-rail" />
+            <span className="preview-blind" />
+            <span className="preview-light" />
+          </div>
+          <span className="panel-label">Configurations possibles</span>
           <div className="stats-grid">
             {stats.map((stat) => (
               <article className="stat-card" key={stat.label}>
@@ -74,8 +80,12 @@ export default function Home() {
         <div className="section-heading compact">
           <div>
             <span className="eyebrow">Catalogue</span>
-            <h2>Choisir une famille</h2>
+            <h2>Explorer les types de stores</h2>
           </div>
+          <p>
+            Selectionne une famille puis compare les solutions selon le rendu,
+            le confort d&apos;usage et le type d&apos;ouverture.
+          </p>
         </div>
 
         <div className="filter-bar" role="tablist" aria-label="Filtres produits">
@@ -96,29 +106,38 @@ export default function Home() {
             <span className="label">Selection</span>
             <h3>{activeService}</h3>
             <p>{currentService.intro}</p>
+            <div className="sidebar-note">
+              <strong>Conseil</strong>
+              <span>Pour un devis plus precis, indique les dimensions approximatives et le nombre de fenetres.</span>
+            </div>
           </aside>
 
-          <div className="catalog-list">
+          <div className="product-grid">
             {currentService.items.map((item, index) => {
               const isOpen = index === openIndex;
 
               return (
-                <article className={isOpen ? "detail-card open" : "detail-card"} key={item.title}>
+                <article className={isOpen ? "product-card open" : "product-card"} key={item.title}>
+                  <div className="product-visual" aria-hidden="true">
+                    <span className="visual-bar" />
+                    <span className="visual-fabric" />
+                    <span className="visual-pull" />
+                  </div>
                   <button
                     type="button"
-                    className="detail-toggle"
+                    className="product-toggle"
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
                     aria-expanded={isOpen}
                   >
                     <div>
-                      <span className="label">Produit</span>
                       <strong>{item.title}</strong>
+                      <span>{item.bestFor}</span>
                     </div>
-                    <span className="detail-mark">{isOpen ? "−" : "+"}</span>
+                    <span className="detail-mark">{isOpen ? "-" : "+"}</span>
                   </button>
 
                   {isOpen ? (
-                    <div className="detail-body">
+                    <div className="product-body">
                       <p>{item.details}</p>
                       <ul className="option-list">
                         {item.options.map((option) => (
@@ -134,9 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-
-          <ContactForm />
-
+      <ContactForm />
     </main>
   );
 }

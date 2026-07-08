@@ -26,14 +26,17 @@ export function ContactForm() {
       <div className="contact-shell">
         <article className="contact-intro">
           <span className="label">Devis</span>
-          <h3>Envoie ton message!</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum voluptates quas? Amet a doloribus aut quisquam ex architecto quibusdam iste velit vitae placeat laudantium error provident, quas cum iure.</p>
+          <h3>Parle-nous de ton projet</h3>
+          <p>
+            Indique le type de store, la ville, le nombre d&apos;ouvertures et les
+            dimensions approximatives. Ces details aident a preparer une reponse
+            claire et un devis plus juste.
+          </p>
           <div className="notify-card">
             <span className="notify-dot" aria-hidden="true" />
             <div>
-              <strong>ntfy</strong>
-              <p>Je recevrai ta notif.</p>
-              <p></p>
+              <strong>Notification directe</strong>
+              <p>La demande arrive directement avec les informations du formulaire.</p>
             </div>
           </div>
         </article>
@@ -46,7 +49,7 @@ export function ContactForm() {
             </label>
 
             <label className="field">
-              <span>Téléphone</span>
+              <span>Telephone</span>
               <input name="phone" placeholder="06..." required />
             </label>
 
@@ -62,7 +65,7 @@ export function ContactForm() {
                 <option>Enrouleurs motorises RTS</option>
                 <option>Enrouleurs motorises WT</option>
                 <option>Store jour et nuit</option>
-                <option>Triangles a rideau motorisees</option>
+                <option>Tringles a rideau motorisees</option>
                 <option>Tringles a rideau a chainette</option>
                 <option>Moustiquaires enroulables</option>
                 <option>Moustiquaires coulisse</option>
@@ -86,7 +89,7 @@ export function ContactForm() {
               Envoyer
             </button>
             <span className={status.type ? `form-status ${status.type}` : "form-status"}>
-              {status.message || "Notification directe vers ntfy"}
+              {status.message || "Reponse apres reception de la demande"}
             </span>
           </div>
         </form>
